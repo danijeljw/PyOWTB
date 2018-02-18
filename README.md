@@ -27,7 +27,6 @@ tba
 <details>
 <summary>Git Install</summary>
 
-* First clone the repository:  
 ```bash
 tba
 ```
