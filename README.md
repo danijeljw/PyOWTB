@@ -1,8 +1,8 @@
 <div align="center">
 
-# TXT2Tweet Heroku Bot
+# Python OpenWeater Twitter Bot
 
-##### Heroku dyno Twitter bot in Python that tweets from txt file
+##### PyOWTB is a Twitter bot that will summarise the UV index and weather for a tweet locatio
 
 [![Version](https://img.shields.io/github/release/danijeljw/brew-goo.svg)]() 
 [![license](https://img.shields.io/github/license/danijeljw/brew-goo.svg)]() 
@@ -29,12 +29,12 @@ tba
 
 * First clone the repository:  
 ```bash
-git clone https://github.com/danijeljw/Heroku-Twitter-Bot
+git clone https://github.com/danijeljw/PyOWTB
 ```
 
 * Then cd into the cloned directory:
 ```bash
-cd Heroku-Twitter-Bot
+cd PyOWTB
 ```
 
 * Git checkout to the latest stable release
@@ -54,7 +54,7 @@ git checkout v1.0.0
 
 MIT License
 
-Copyright (c) 2017-2018 Danijel-James Wynyard
+Copyright (c) 2018 Danijel-James Wynyard
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software 
 without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit 
