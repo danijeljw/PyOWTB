@@ -5,7 +5,7 @@
 
 </div>
 
-<div align="center">
+<div align="left">
 
 ### v0.0.1
 
@@ -15,5 +15,5 @@
 
 </div>
 
-\
+
 
