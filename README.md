@@ -9,7 +9,7 @@
 [![platform](https://img.shields.io/badge/platform-MacOS%2C%20OSX-blue.svg)]()
 
 
-### Script tested extensively on MacOS and OSX
+### Script not tested, only boilerplate at this time
 
 </div>
 
@@ -29,27 +29,30 @@ tba
 
 * First clone the repository:  
 ```bash
-git clone https://github.com/danijeljw/PyOWTB
-```
-
-* Then cd into the cloned directory:
-```bash
-cd PyOWTB
-```
-
-* Git checkout to the latest stable release
-```bash
-git checkout v1.0.0
-```
-
-* Run the guided install script with
-```bash
-./install.sh
+tba
 ```
 
 </details>
 
 
+<details>
+<summary>Heroku</summary>
+
+```bash
+tba
+```
+
+</details>
+
+
+<details>
+<summary>Raspberry PI</summary>
+
+```bash
+tba
+```
+
+</details>
 ## License
 
 MIT License
