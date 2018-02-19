@@ -5,6 +5,19 @@
 
 </div>
 
+
+<div align="left">
+
+### v0.0.3
+
+* Added [geopy](https://pypi.python.org/pypi/geopy) functionality
+* Able to identify geolocation of original Tweeter
+* Using OpenWeather get UV Index of Tweeter
+* Removed some junk code
+
+</div>
+
+
 <div align="left">
 
 ### v0.0.2
