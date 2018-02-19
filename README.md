@@ -59,7 +59,7 @@ tba
 
 * Implement OpenWeather API signup
 * Twitter API signup for new setups
-* Twitter account designated for service
+* ~~Twitter account designated for service~~ [@PyOpenWeather](https://twitter.com/PyOpenWeather)
 * Heroku deployment script for rapid deployment
 * TravisCI testing
 * RaspberryPi deployment script
