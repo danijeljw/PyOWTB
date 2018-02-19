@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ae0f1699efae1ef52b6477b791a597804ff7f03b514b3a4efd6516f610686288"
+            "sha256": "bc49e02c291dcc3fcf2990f3fb38d980b8af775cc52d6fcea1cb0c1e1f8685c4"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -42,6 +42,13 @@
                 "sha256:84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae"
             ],
             "version": "==3.0.4"
+        },
+        "geopy": {
+            "hashes": [
+                "sha256:5215b360f524118a468c13bf97ecbff6136a1876bf4b11d624916e9c9e0f7c17",
+                "sha256:4250e5a9e9f7abb990eddf01d1491fc112755e14f76060011c607ba759a74112"
+            ],
+            "version": "==1.11.0"
         },
         "idna": {
             "hashes": [
