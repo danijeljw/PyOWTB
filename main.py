@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 
 import tweepy
+import random
+import json
+import time
+import pprint
 
 # from our keys module (keys.py), import the keys dictionary
 from keys2 import keys
@@ -20,20 +24,49 @@ api = tweepy.API(auth)
 twts = api.search(q="Hello World!")
 
 
-"""
-#list of specific strings we want to check for in Tweets
-t = ['Hello world!',
-    'Hello World!',
-    'Hello World!!!',
-    'Hello world!!!',
-    'Hello, world!',
-    'Hello, World!']
+for status in api.user_timeline('PyOpenWeather'):
+    api.retweet(status.id)
 
-# Check over assigned value tweets and reply to the user by username too
-for s in twt:
-    for i in t:
-        if i == s.text:
-            sn = s.user.screen_name
-            m = "@%s Hello!" % (sn)
-            s = api.update_status(m, s.id)
-"""
+
+# If debug_mode is True then the bot won't actually tweet
+# set debug_mode is False to enable tweets
+debug_mode = True
+
+
+
+# Functions that allow the bot to tweet or reply to tweets
+def tweet(status):
+    print ("JUST TWEETED: "), status
+    # Only *actually* send the tweet on twitter if we're not in debug mode
+    if debug_mode == False:
+        api.update_status(status)
+
+
+def tweet_with_probability(status, probability):
+    # Change the probability of tweeting variable to affect how often the bot tweets
+    rand = random.random()
+    if rand <= probability:
+        print ("JUST TWEETED: "), status
+        # Only *actually* send the tweet on twitter if we're not in debug mode
+        if debug_mode == False:
+            api.update_status(status)
+
+
+#Tweet when keyword is picked up
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
