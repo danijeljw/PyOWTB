@@ -8,6 +8,7 @@ name = "pypi"
 [packages]
 
 tweepy = "*"
+geopy = "*"
 
 
 [dev-packages]
