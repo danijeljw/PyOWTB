@@ -1,8 +1,8 @@
 <div align="center">
 
-# Python OpenWeater Twitter Bot
+# PyOpenWeater - The Weather Twitter Bot
 
-##### PyOWTB is a Twitter bot that will summarise the UV index and weather for a tweet location
+##### PyOWTB is a Twitter bot that will summarise the UV index and weather for a tweeter's location
 
 [![Version](https://img.shields.io/github/release/danijeljw/brew-goo.svg)]()
 [![license](https://img.shields.io/github/license/danijeljw/brew-goo.svg)]()
