@@ -2,11 +2,12 @@
 
 # Python OpenWeater Twitter Bot
 
-##### PyOWTB is a Twitter bot that will summarise the UV index and weather for a tweet locatio
+##### PyOWTB is a Twitter bot that will summarise the UV index and weather for a tweet location
 
 [![Version](https://img.shields.io/github/release/danijeljw/brew-goo.svg)]() 
 [![license](https://img.shields.io/github/license/danijeljw/brew-goo.svg)]() 
-[![platform](https://img.shields.io/badge/platform-MacOS%2C%20OSX-blue.svg)]()
+[![platform](https://img.shields.io/badge/platform-MacOS%2C%20OSX-blue.svg)]() 
+[![platform](https://img.shields.io/badge/python-2.7%2C%203.6-ff69b4.svg)]()
 
 
 ### Script not tested, only boilerplate at this time
@@ -52,6 +53,21 @@ tba
 ```
 
 </details>
+
+
+## Future Development
+
+* Implement OpenWeather API signup
+* Twitter API signup for new setups
+* Twitter account designated for service
+* Heroku deployment script for rapid deployment
+* TravisCI testing
+* RaspberryPi deployment script
+* Aptitude deployment setup
+* PyPi deployment setup
+* Realtime response vs timed response
+* iOS app version
+* Android app version
 
 
 ## License
