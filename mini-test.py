@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
-#!/usr/bin/env python3
 
 import tweepy
+import urllib.request
+import urllib.parse
+import urllib.error
+import requests
+from time import sleep as snooze
 
 from tweepy import OAuthHandler
 from geopy.geocoders import Nominatim
-from urllib2 import Request, urlopen, URLError
 
 from keys2 import keys
-from OWAppID import OWappidKey
-
+from OW_API_KEY import OpenWeather_SECRET_KEY
 
 # Tweepy connects to Twitter using API
 CONSUMER_KEY = keys['consumer_key']
@@ -17,17 +19,30 @@ CONSUMER_SECRET = keys['consumer_secret']
 ACCESS_TOKEN = keys['access_token']
 ACCESS_TOKEN_SECRET = keys['access_token_secret']
 
-# OpenWeather API Key secret
-OWAPPIDKEY_SECRET = OWappidKey['secret_key']
-
-# OpenWeather API URL
-# NEEDS TO BE MOVED DOWN AND CONJUNCTED WITH OTHER CODE
-OPENWEATHER_URI = 'http://api.openweathermap.org/data/2.5/uvi?appid='
-
 # create connection to Twitter via API
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
+
+##################
+
+# OpenWeather API Key secret
+OW_SECRET = OpenWeather_SECRET_KEY['secret_key']
+
+# OpenWeather API URL
+# http://api.openweathermap.org/data/2.5/uvi?appid={appid}&lat={lat}&lon={lon}
+
+
+# URI as list, join later
+OW_URI_JSON = []
+
+OPENWEATHER_URI = 'http://api.openweathermap.org/data/2.5/uvi?appid='
+
+AND_LAT = '&lat='
+AND_LON = '&lon='
+LAT_REF = float(0)
+LON_REF = float(0)
+
 
 # get user details from username function
 def get_user_details(username):
@@ -40,31 +55,68 @@ listofUsers = ['thinkgeek','PyOpenWeather']
 # for 'x' (each user) in listofUsers
 for x in listofUsers:
     geolocator = Nominatim()
+
     # assign the username to 'x'
     username = x
+
     # get the details of the username (assigned to 'x')
     userOBJ = get_user_details(username)
+
     # print the username, break line, the city of the account
-    print('@' + username + ': \n',userOBJ.location)
+    print('Twitter UserID: @' + username + '\nLocation: ',userOBJ.location)
+
     # convert location to geocode as location
     location = geolocator.geocode(userOBJ.location)
+
     # print latitude and longitude from account location conversion
-    print((location.latitude,location.longitude))
+    print('Latitude: ' + str(location.latitude) + ', Longitude: ' + str(location.longitude))
+
 #   print(type(location.latitude))
     # convert latitude, longitude to 2 decimal points only (format is float)
-    print(format(location.latitude, '.2f'),format(location.longitude, '.2f'))
-    
+    print(str(round((location.latitude),2)) + ', ' + str(round((location.longitude),2)))
+
     # assign variables to LAT and LONG (local variables in function)
-    LATITUDE = format(location.latitude, '.2f')
-    LONGITUDE = format(location.longitude, '.2f')
-    
+    LAT_REF = round(location.latitude,2)
+    LON_REF = round(location.longitude,2)
+
+    # create new URI completed
+    OW_URI_JSON.append(OPENWEATHER_URI)
+    OW_URI_JSON.append(OW_SECRET)
+    OW_URI_JSON.append(AND_LAT)
+    OW_URI_JSON.append(str(LAT_REF))
+    OW_URI_JSON.append(AND_LON)
+    OW_URI_JSON.append(str(LON_REF))
+    OW_API_URL = ''.join(OW_URI_JSON)
+
+    # Print a copy of the URL that is being accessed by Python
+#   print(OW_URI_JSON)
+    print('OpenWeahter API URL: ' + OW_API_URL)
+    JSON_DATA = requests.get(OW_API_URL).json()
+
+    # print JSON_DATA return as string
+    print('JSON Data Return: ' + str(JSON_DATA))
+
+    # obtain UV Index and assign to var as float
+    UV_INDEX = JSON_DATA['value']
+
+    # print UV Index as string
+    print('UV Index: ' + str(UV_INDEX))
+    snooze(5)
+
+    # clear variables
+    OW_URI_JSON = []
+
+    OPENWEATHER_URI = 'http://api.openweathermap.org/data/2.5/uvi?appid='
+
+    AND_LAT = '&lat='
+    AND_LON = '&lon='
+    LAT_REF = float(0)
+    LON_REF = float(0)
+
+#    break
     # run API against OpenWeather to get current UV index
-    #
-    # MAY NEED TO REASSIGN LAT AND LONG TO VARIABLES AND USE THEM BELOW ONCE THEY HAVE BEEN SHRUNK DOWN FIRST!!!
-    request = Request(OPENWEATHER_URI + OWAPPIDKEY_SECRET + '&lat=' + format(location.latitude, '.2f') + '&lon=' + format(location.longitude, '.2f'))
-    try:
-        response = urlopen(request)
-        UVIndex = response.read()
-    except URLError, e:
-        print 'Unable to get UV Index. Error code: ', e
+#    JSON_DATA = urllib.request.urlopen(OW_URI_JSON).json()
+#    print(JSON_DATA)
+
+
 
