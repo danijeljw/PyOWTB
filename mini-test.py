@@ -21,8 +21,8 @@ ACCESS_TOKEN_SECRET = keys['access_token_secret']
 OWAPPIDKEY_SECRET = OWappidKey['secret_key']
 
 # OpenWeather API URL
-# THIS NEEDS TO BE SHORTENED, TOO LONG
-owURL = 'http://api.openweathermap.org/data/2.5/uvi?appid=' + OWAPPIDKEY_SECRET + '&lat=' + format(location.latitude, '.2f') + '&lon=' + format(location.longitude, '.2f'))
+# NEEDS TO BE MOVED DOWN AND CONJUNCTED WITH OTHER CODE
+OPENWEATHER_URI = 'http://api.openweathermap.org/data/2.5/uvi?appid='
 
 # create connection to Twitter via API
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
