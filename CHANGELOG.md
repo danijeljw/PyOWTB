@@ -12,6 +12,7 @@
 ### v0.0.6
 
 * TravisCI added
+* changed .gitignore
 
 </div>
 
