@@ -6,6 +6,28 @@
 </div>
 
 
+
+<div align="left">
+
+### v0.0.6
+
+* TravisCI added
+
+</div>
+
+
+
+<div align="left">
+
+### v0.0.5
+
+* TravisCI added
+* Cleaned up code
+
+</div>
+
+
+
 <div align="left">
 
 ### v0.0.4
