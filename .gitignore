@@ -102,4 +102,4 @@ ENV/
 
 # Custom Files
 keys2.py
-OW_*_KEY.py
+OW_API_KEY.py
