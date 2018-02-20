@@ -53,10 +53,15 @@ for x in listofUsers:
 #   print(type(location.latitude))
     # convert latitude, longitude to 2 decimal points only (format is float)
     print(format(location.latitude, '.2f'),format(location.longitude, '.2f'))
+    
+    # assign variables to LAT and LONG (local variables in function)
+    LATITUDE = format(location.latitude, '.2f')
+    LONGITUDE = format(location.longitude, '.2f')
+    
     # run API against OpenWeather to get current UV index
     #
     # MAY NEED TO REASSIGN LAT AND LONG TO VARIABLES AND USE THEM BELOW ONCE THEY HAVE BEEN SHRUNK DOWN FIRST!!!
-    request = Request('http://api.openweathermap.org/data/2.5/uvi?appid=' + OWAPPIDKEY_SECRET + '&lat=' + format(location.latitude, '.2f') + '&lon=' + format(location.longitude, '.2f'))
+    request = Request(OPENWEATHER_URI + OWAPPIDKEY_SECRET + '&lat=' + format(location.latitude, '.2f') + '&lon=' + format(location.longitude, '.2f'))
     try:
         response = urlopen(request)
         UVIndex = response.read()
