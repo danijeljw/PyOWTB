@@ -8,6 +8,21 @@
 
 <div align="left">
 
+### v0.0.4
+
+* Working model for obtaining data and transforming to required inputs
+* Print data to STDOUT via Python3 shell
+* Updated handling of `urllib`
+* Cleaned up code
+
+</div>
+
+
+
+
+
+<div align="left">
+
 ### v0.0.3
 
 * Added [geopy](https://pypi.python.org/pypi/geopy) functionality
