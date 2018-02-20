@@ -1,10 +1,7 @@
-#!/usr/bin/env python3
-
 # keys.py
 
 # Keys required for connection to Twitter account
 # Can be obtained from https://dev.twitter.com
-
 
 
 keys = dict(
