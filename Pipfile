@@ -9,6 +9,7 @@ name = "pypi"
 
 tweepy = "*"
 geopy = "*"
+requests = "*"
 
 
 [dev-packages]
