@@ -13,7 +13,11 @@
 
 * TravisCI added
 * changed .gitignore
-
+* created OpenWeather class
+* merged API key's to `keys.py`
+* cleaned up functions
+* removed junk code
+* swapped to `requests` over `urllib`
 </div>
 
 
