@@ -13,25 +13,25 @@ from geopy.geocoders import Nominatim
 from keys2 import keys
 from OW_API_KEY import OpenWeather_SECRET_KEY
 
-# Tweepy connects to Twitter using API
+""" Twitter API credentials from keys """
 CONSUMER_KEY = keys['consumer_key']
 CONSUMER_SECRET = keys['consumer_secret']
 ACCESS_TOKEN = keys['access_token']
 ACCESS_TOKEN_SECRET = keys['access_token_secret']
 
-# create connection to Twitter via API
+""" Create connection to Twitter API via Tweepy """
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
-##################
 
-# OpenWeather API Key secret
+""" OpenWeather API credentials from OW_API_KEY """
 OW_SECRET = OpenWeather_SECRET_KEY['secret_key']
 
-# OpenWeather API URL
-# http://api.openweathermap.org/data/2.5/uvi?appid={appid}&lat={lat}&lon={lon}
-
+"""
+OpenWeather API URL for latitude and longitude full string:
+http://api.openweathermap.org/data/2.5/uvi?appid={appid}&lat={lat}&lon={lon}
+"""
 
 # URI as list, join later
 OW_URI_JSON = []
@@ -113,10 +113,9 @@ for x in listofUsers:
     LAT_REF = float(0)
     LON_REF = float(0)
 
-#    break
-    # run API against OpenWeather to get current UV index
-#    JSON_DATA = urllib.request.urlopen(OW_URI_JSON).json()
-#    print(JSON_DATA)
 
 
-
+"""
+if __name__ == "__main__":
+    main()
+"""
