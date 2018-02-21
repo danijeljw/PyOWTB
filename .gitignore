@@ -103,3 +103,6 @@ ENV/
 # Custom Files
 keys2.py
 OW_API_KEY.py
+
+# PyCharm CE
+.idea/
