@@ -7,11 +7,11 @@ class Dog:
     def add_trick(self, trick):
         self.tricks.append(trick)
 
->>> d = Dog('Fido')
->>> e = Dog('Buddy')
->>> d.add_trick('roll over')
->>> e.add_trick('play dead')
->>> d.tricks
-['roll over']
->>> e.tricks
-['play dead']
+d = Dog('Fido')
+e = Dog('Buddy')
+d.add_trick('roll over')
+e.add_trick('play dead')
+d.tricks
+e.tricks
+
+
