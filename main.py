@@ -5,6 +5,8 @@ import random
 import json
 import time
 import pprint
+import requests
+
 
 # from our keys module (keys.py), import the keys dictionary
 from keys2 import keys
@@ -53,20 +55,4 @@ def tweet_with_probability(status, probability):
 
 
 #Tweet when keyword is picked up
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
